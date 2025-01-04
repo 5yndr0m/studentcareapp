@@ -1,26 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import LoginPage from './pages/LoginPage';
+import Profile from './pages/Profile';
+import Courses from './pages/Courses';
+import Subjects from './pages/Subjects';
 
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <SafeAreaView>
+    <SafeAreaProvider>
       <StatusBar style="auto" />
-      <ScrollView style={styles.container}>
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
-        </View>
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
-        </View>
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
-        </View>
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='Login'>
+          <Stack.Screen name="Login" component={LoginPage} />
+          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Courses" component={Courses} />
+          <Stack.Screen name="Subjects" component={Subjects} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
@@ -28,6 +29,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
