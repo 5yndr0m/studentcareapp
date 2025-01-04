@@ -6,7 +6,7 @@ const UOV_Banner = () => {
     <View style={styles.banner}>
       <Image
         source={require("../assets/UoV_Logo.png")}
-        style={{ width: 100, height: 100, marginTop: 20 }}
+        style={{ width: 340, height: 90 }}
       />
     </View>
   );
@@ -14,11 +14,15 @@ const UOV_Banner = () => {
 
 const styles = StyleSheet.create({
   banner: {
-    width: "100%",
-    height: 200,
+    width: 350,
+    height: 100,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    marginTop: 5,
+    marginBottom: 5,
+    marginLeft: 5,
+    marginRight: 5,
   },
   bannerImage: {
     width: "100%",
