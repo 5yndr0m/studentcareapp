@@ -28,8 +28,8 @@ function MainTabs() {
         component={Profile}
         options={{
           tabBarLabel: "Profile",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+          tabBarIcon: ({ focused, color, size }) => (
+            <MaterialCommunityIcons name={focused ? "account" : "account-outline"} color={color} size={size} />
           ),
         }}
       />
@@ -38,8 +38,8 @@ function MainTabs() {
         component={Courses}
         options={{
           tabBarLabel: "Cources",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="school" color={color} size={size} />
+          tabBarIcon: ({ focused, color, size }) => (
+            <MaterialCommunityIcons name={focused ? "school" : "school-outline"} color={color} size={size} />
           ),
         }}
       />
@@ -48,9 +48,9 @@ function MainTabs() {
         component={Subjects}
         options={{
           tabBarLabel: "Subjects",
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ focused,color, size }) => (
             <MaterialCommunityIcons
-              name="book-open"
+              name={focused ? "book-open" : "book-open-outline"}
               color={color}
               size={size}
             />
@@ -60,6 +60,7 @@ function MainTabs() {
     </Tab.Navigator>
   );
 }
+
 export default function App() {
   return (
     <SafeAreaProvider>
