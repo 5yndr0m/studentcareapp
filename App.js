@@ -13,7 +13,9 @@ import Subjects from "./pages/Subjects";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function MainTabs() {
+function MainTabs({ route }) {
+  const student = route.params?.student;
+  
   return (
     <Tab.Navigator
       screenOptions={{
@@ -26,6 +28,7 @@ function MainTabs() {
       <Tab.Screen
         name="Profile"
         component={Profile}
+        initialParams={{ student }}
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ focused, color, size }) => (
@@ -36,6 +39,7 @@ function MainTabs() {
       <Tab.Screen
         name="Courses"
         component={Courses}
+        initialParams={{ student }}
         options={{
           tabBarLabel: "Cources",
           tabBarIcon: ({ focused, color, size }) => (
@@ -46,6 +50,7 @@ function MainTabs() {
       <Tab.Screen
         name="Subjects"
         component={Subjects}
+        initialParams={{ student }}
         options={{
           tabBarLabel: "Subjects",
           tabBarIcon: ({ focused,color, size }) => (
@@ -88,7 +93,7 @@ export default function App() {
             name="MainTabs"
             component={MainTabs}
             options={{
-              headerBackVisible: false,
+              // headerBackVisible: false,
               title: "Uov Student care",
             }}
           />
