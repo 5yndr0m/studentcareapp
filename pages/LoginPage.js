@@ -1,9 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, View, ScrollView } from "react-native";
+import { StyleSheet, View, ScrollView, Dimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text, TextInput, Button } from "react-native-paper";
 import UOV_Banner from "../components/UOV_Banner";
+
+const { height } = Dimensions.get('window');
 
 export default function LoginPage() {
   const [text, setText] = useState("");
@@ -47,6 +49,7 @@ export default function LoginPage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    minHeight: height,
     flexDirection: "column",
   },
   header: {
@@ -54,17 +57,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   title: {
-    flex: 2,
+    flex: 1,
     backgroundColor: "#fff",
   },
   titleText: {
     textAlign: "center",
-    marginTop: 20,
-    marginBottom: 20,
+    marginTop: 10,
+    marginBottom: 10,
   },
   container2: {
-    flex: 3,
-    backgroundColor: "red",
+    flex: 2,
+    backgroundColor: "#fff",
     padding: 10,
   },
   footer: {
