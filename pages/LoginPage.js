@@ -5,13 +5,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Text, TextInput, Button } from "react-native-paper";
 import UOV_Banner from "../components/UOV_Banner";
 
-const { height } = Dimensions.get('window');
+const { height: screenHeight } = Dimensions.get('window');
 
 export default function LoginPage() {
   const [text, setText] = useState("");
 
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={styles.scrollView}>
       <View style={styles.container}>
         <View style={styles.header}>
           <UOV_Banner />
@@ -27,20 +27,20 @@ export default function LoginPage() {
             label="Username"
             value={text}
             onChangeText={(text) => setText(text)}
+            style={styles.txtInput}
           />
           <TextInput
             mode="outlined"
             label="Password"
             value={text}
             onChangeText={(text) => setText(text)}
+            style={styles.txtInput}
           />
           <Button mode="contained" onPress={() => console.log("Pressed")} style={styles.logBtn}>
             Login
           </Button>
         </View>
-        <View style={styles.footer}>
-          <Text>Open up App.js to start working on your app!</Text>
-        </View>
+        <View style={styles.footer} />
       </View>
     </ScrollView>
   );
@@ -49,9 +49,12 @@ export default function LoginPage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    minHeight: height,
+    height: "100%",
     flexDirection: "column",
   },
+  scrollView: {
+      flexGrow: 1,
+    },
   header: {
     flex: 1,
     backgroundColor: "#fff",
@@ -68,7 +71,7 @@ const styles = StyleSheet.create({
   container2: {
     flex: 2,
     backgroundColor: "#fff",
-    padding: 10,
+    padding: 20,
   },
   footer: {
     flex: 1,
@@ -76,6 +79,9 @@ const styles = StyleSheet.create({
   },
   logBtn: {
     backgroundColor: "#e2bee2",
-    marginTop: 10,
+    marginTop: 20,
   },
+  txtInput: {
+    marginBottom: 10,
+  }
 });
