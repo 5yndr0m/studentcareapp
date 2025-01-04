@@ -5,11 +5,22 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Text, TextInput, Button } from "react-native-paper";
 import UOV_Banner from "../components/UOV_Banner";
 
-const { height: screenHeight } = Dimensions.get('window');
+const { height: screenHeight } = Dimensions.get("window");
 
 export default function LoginPage() {
   const [text, setText] = useState("");
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
+  const handleInputChange = (field,value) => {
+    setUser((preUser) => ({ ...preUser, [field]: value }));
+  };
+
+  console.log(user)
   return (
     <ScrollView contentContainerStyle={styles.scrollView}>
       <View style={styles.container}>
@@ -25,18 +36,33 @@ export default function LoginPage() {
           <TextInput
             mode="outlined"
             label="Username"
-            value={text}
-            onChangeText={(text) => setText(text)}
+            name="username"
+            value={user.username}
+            onChangeText={(value) => handleInputChange('username', value)}
             style={styles.txtInput}
           />
           <TextInput
             mode="outlined"
             label="Password"
-            value={text}
-            onChangeText={(text) => setText(text)}
+            name="password"
+            value={user.password}
+            onChangeText={(value) => handleInputChange('password', value)}
             style={styles.txtInput}
+            secureTextEntry={!showPassword}
+            right={
+              <TextInput.Icon
+                icon={showPassword ? "eye-off" : "eye"}
+                onPress={() => setShowPassword(!showPassword)}
+                forceTextInputFocus={false}
+                color={showPassword ? "#1a73e8" : "#757575"}
+              />
+            }
           />
-          <Button mode="contained" onPress={() => console.log("Pressed")} style={styles.logBtn}>
+          <Button
+            mode="contained"
+            onPress={() => console.log("Pressed")}
+            style={styles.logBtn}
+          >
             Login
           </Button>
         </View>
@@ -53,8 +79,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   scrollView: {
-      flexGrow: 1,
-    },
+    flexGrow: 1,
+  },
   header: {
     flex: 1,
     backgroundColor: "#fff",
@@ -83,5 +109,5 @@ const styles = StyleSheet.create({
   },
   txtInput: {
     marginBottom: 10,
-  }
+  },
 });
