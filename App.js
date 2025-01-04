@@ -17,10 +17,14 @@ export default function App() {
         <Stack.Navigator
           initialRouteName="Login"
           screenOptions={{
-            headerStyle: { backgroundColor: "#e2bee2"},
-            headerTitleAlign: 'center' ,
-            headerTitleStyle: { fontSize: 20, fontWeight: 'bold', color: '#fff'},
-            headerTintColor: '#fff',
+            headerStyle: { backgroundColor: "#e2bee2" },
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              fontSize: 20,
+              fontWeight: "bold",
+              color: "#fff",
+            },
+            headerTintColor: "#fff",
           }}
         >
           <Stack.Screen
@@ -28,7 +32,11 @@ export default function App() {
             component={LoginPage}
             options={{ title: "Uov Student care" }}
           />
-          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen
+            name="Profile"
+            component={Profile}
+            options={{ headerBackVisible: false, title: "Uov Student care" }}
+          />
           <Stack.Screen name="Courses" component={Courses} />
           <Stack.Screen name="Subjects" component={Subjects} />
         </Stack.Navigator>
