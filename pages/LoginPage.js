@@ -8,7 +8,7 @@ import { students } from "../assets/StudentsDb";
 
 const { height: screenHeight } = Dimensions.get("window");
 
-export default function LoginPage({navigation}) {
+export default function LoginPage({ navigation }) {
   const [text, setText] = useState("");
   const [user, setUser] = useState({
     username: "",
@@ -27,7 +27,7 @@ export default function LoginPage({navigation}) {
       (s) => s.username === user.username && s.password === user.password,
     );
     if (student) {
-      navigation.navigate('Profile', { student });
+      navigation.replace("MainTabs", { student });
     } else {
       setError("Invalid username or password");
     }
@@ -71,15 +71,11 @@ export default function LoginPage({navigation}) {
             }
           />
           {error ? (
-            <HelperText type="error" visible={true} >
-              { error }
-            </HelperText>  
+            <HelperText type="error" visible={true}>
+              {error}
+            </HelperText>
           ) : null}
-          <Button
-            mode="contained"
-            onPress={handleLogin}
-            style={styles.logBtn}
-          >
+          <Button mode="contained" onPress={handleLogin} style={styles.logBtn}>
             Login
           </Button>
         </View>
