@@ -2,12 +2,13 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { StyleSheet, View, ScrollView, Dimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, TextInput, Button } from "react-native-paper";
+import { Text, TextInput, Button, HelperText } from "react-native-paper";
 import UOV_Banner from "../components/UOV_Banner";
+import { students } from "../assets/StudentsDb";
 
 const { height: screenHeight } = Dimensions.get("window");
 
-export default function LoginPage() {
+export default function LoginPage({navigation}) {
   const [text, setText] = useState("");
   const [user, setUser] = useState({
     username: "",
@@ -16,11 +17,22 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleInputChange = (field,value) => {
+  const handleInputChange = (field, value) => {
     setUser((preUser) => ({ ...preUser, [field]: value }));
+    setError("");
   };
 
-  console.log(user)
+  const handleLogin = () => {
+    const student = students.find(
+      (s) => s.username === user.username && s.password === user.password,
+    );
+    if (student) {
+      navigation.navigate('Profile', { student });
+    } else {
+      setError("Invalid username or password");
+    }
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.scrollView}>
       <View style={styles.container}>
@@ -38,7 +50,7 @@ export default function LoginPage() {
             label="Username"
             name="username"
             value={user.username}
-            onChangeText={(value) => handleInputChange('username', value)}
+            onChangeText={(value) => handleInputChange("username", value)}
             style={styles.txtInput}
           />
           <TextInput
@@ -46,7 +58,7 @@ export default function LoginPage() {
             label="Password"
             name="password"
             value={user.password}
-            onChangeText={(value) => handleInputChange('password', value)}
+            onChangeText={(value) => handleInputChange("password", value)}
             style={styles.txtInput}
             secureTextEntry={!showPassword}
             right={
@@ -58,9 +70,14 @@ export default function LoginPage() {
               />
             }
           />
+          {error ? (
+            <HelperText type="error" visible={true} >
+              { error }
+            </HelperText>  
+          ) : null}
           <Button
             mode="contained"
-            onPress={() => console.log("Pressed")}
+            onPress={handleLogin}
             style={styles.logBtn}
           >
             Login
