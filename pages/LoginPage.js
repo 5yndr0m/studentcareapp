@@ -32,7 +32,7 @@ export default function LoginPage() {
             value={text}
             onChangeText={(text) => setText(text)}
           />
-          <Button mode="contained" onPress={() => console.log("Pressed")}>
+          <Button mode="contained" onPress={() => console.log("Pressed")} style={styles.logBtn}>
             Login
           </Button>
         </View>
@@ -65,9 +65,14 @@ const styles = StyleSheet.create({
   container2: {
     flex: 3,
     backgroundColor: "red",
+    padding: 10,
   },
   footer: {
     flex: 1,
     backgroundColor: "#e2bee2",
+  },
+  logBtn: {
+    backgroundColor: "#e2bee2",
+    marginTop: 10,
   },
 });
