@@ -73,14 +73,14 @@ export default function LoginPage({ navigation }) {
               />
             }
           />
-          {error ? (
-            <HelperText type="error" visible={true}>
-              {error}
-            </HelperText>
-          ) : null}
-          <Button mode="contained" onPress={handleLogin} style={styles.logBtn}>
             Login
           </Button>
+          {error ? (
+            <View style={styles.errorContainer}>
+              <MaterialCommunityIcons name="alert-circle" size={20} color="white" />
+              <Text style={styles.errorText}>{error}</Text>
+            </View>
+          ) : null}
         </View>
         <View style={styles.footer} />
       </View>
