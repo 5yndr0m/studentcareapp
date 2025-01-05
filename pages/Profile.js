@@ -1,7 +1,5 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, ScrollView } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, Avatar, Card } from "react-native-paper";
+import { Text } from "react-native-paper";
 import ProfileCard from "../components/ProfileCard";
 import UOV_Banner from "../components/UOV_Banner";
 
