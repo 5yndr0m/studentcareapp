@@ -9,6 +9,7 @@ export default function Profile({ route }) {
   const student = route.params?.student;
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <View style={styles.header}>
         <UOV_Banner />
@@ -16,8 +17,11 @@ export default function Profile({ route }) {
       <View style={styles.container2}>
       <ProfileCard student={student} />
       </View>
+      <View style={styles.footer}>
+        <Text>UoV @ 2024</Text>
+      </View>
     </View>
-   
+   </ScrollView>
   );
 }
 
@@ -35,5 +39,9 @@ const styles = StyleSheet.create({
     flex: 2,
     backgroundColor: "#fff",
     padding: 20,
+  },
+  footer: {
+    flex: 1,
+    backgroundColor: "#e2bee2",
   },
 });
