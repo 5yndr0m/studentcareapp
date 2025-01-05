@@ -65,9 +65,7 @@ To install and run this project locally, follow these steps:
 
 ### Video
 
-<video width="300" controls>
-    <source src="./assets/screenshots/video.mp4" type="video/mp4">
-</video>
+<img src="./assets/screenshots/video.gif" width="300" alt="Demo"/>
 
 ## Contributing
 
