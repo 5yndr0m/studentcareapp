@@ -19,7 +19,7 @@ function MainTabs({ route }) {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: "#e2bee2",
+        tabBarActiveTintColor: "#4a148c",
         tabBarInactiveTintColor: "gray",
         tabBarStyle: { backgroundColor: "white" },
         headerShown: false,
@@ -69,12 +69,12 @@ function MainTabs({ route }) {
 export default function App() {
   return (
     <SafeAreaProvider>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="Login"
           screenOptions={{
-            headerStyle: { backgroundColor: "#e2bee2" },
+            headerStyle: { backgroundColor: "#4a148c" },
             headerTitleAlign: "center",
             headerTitleStyle: {
               fontSize: 20,
