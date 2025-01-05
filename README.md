@@ -22,16 +22,19 @@ StudentCareApp is a JavaScript-based application designed to help students view 
 To install and run this project locally, follow these steps:
 
 1. Clone the repository:
+
    ```shell
    git clone https://github.com/5yndr0m/studentcareapp.git
    ```
 
 2. Navigate to the project directory:
+
    ```shell
    cd studentcareapp
    ```
 
 3. Install the dependencies:
+
    ```shell
    npm install
    ```
@@ -50,18 +53,21 @@ To install and run this project locally, follow these steps:
 
 ### Screenshots
 
-![Screenshot 1](./assets/screenshots/Login.jpg)
-![Screenshot 2](./assets/screenshots/Login_error.jpg)
-![Screenshot 3](./assets/screenshots/Login_keyboard.jpg)
-![Screenshot 4](./assets/screenshots/Profile.jpg)
-![Screenshot 5](./assets/screenshots/Profile_2.jpg)
-![Screenshot 6](./assets/screenshots/Subject.jpg)
-![Screenshot 7](./assets/screenshots/Course.jpg)
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+    <img src="./assets/screenshots/Login.jpg" width="300" alt="Login Screen"/>
+    <img src="./assets/screenshots/Login_error.jpg" width="300" alt="Login Error"/>
+    <img src="./assets/screenshots/Login_keyboard.jpg" width="300" alt="Login Keyboard"/>
+    <img src="./assets/screenshots/Profile.jpg" width="300" alt="Profile Screen"/>
+    <img src="./assets/screenshots/Profile_2.jpg" width="300" alt="Profile Details"/>
+    <img src="./assets/screenshots/Subject.jpg" width="300" alt="Subject Screen"/>
+    <img src="./assets/screenshots/Course.jpg" width="300" alt="Course Screen"/>
+</div>
 
 ### Video
 
-
-[Watch the demo video](./assets/screenshots/video.mp4)
+<video width="300" controls>
+    <source src="./assets/screenshots/video.mp4" type="video/mp4">
+</video>
 
 ## Contributing
 
@@ -97,6 +103,7 @@ For any questions or feedback, please contact the repository owner:
 ---
 
 Recent commits:
+
 - [docs: generate the change log](https://github.com/5yndr0m/studentcareapp/commit/5c7d95d9bb88a16d73187aa49aed566a754c3c4f)
 - [style: changed to darker accent color](https://github.com/5yndr0m/studentcareapp/commit/024b282b23877e59786845d93bf30c0b83c29ad2)
 - [style: changed button styles](https://github.com/5yndr0m/studentcareapp/commit/755a064a43b2105736cd21303683f624cc84156c)
