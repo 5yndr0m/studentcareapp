@@ -2,7 +2,8 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { StyleSheet, View, ScrollView, Dimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, TextInput, Button, HelperText } from "react-native-paper";
+import { Text, TextInput, Button, HelperText, MD2Colors } from "react-native-paper";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import UOV_Banner from "../components/UOV_Banner";
 import { students } from "../assets/StudentsDb";
 
@@ -52,6 +53,7 @@ export default function LoginPage({ navigation }) {
             value={user.username}
             onChangeText={(value) => handleInputChange("username", value)}
             style={styles.txtInput}
+            activeOutlineColor="#4a148c" 
           />
           <TextInput
             mode="outlined"
@@ -61,12 +63,13 @@ export default function LoginPage({ navigation }) {
             onChangeText={(value) => handleInputChange("password", value)}
             style={styles.txtInput}
             secureTextEntry={!showPassword}
+            activeOutlineColor="#4a148c" 
             right={
               <TextInput.Icon
                 icon={showPassword ? "eye-off" : "eye"}
                 onPress={() => setShowPassword(!showPassword)}
                 forceTextInputFocus={false}
-                color={showPassword ? "#1a73e8" : "#757575"}
+                color={showPassword ? "#4a148c" : "#757575"}
               />
             }
           />
@@ -114,10 +117,9 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 1,
-    backgroundColor: "#e2bee2",
+    backgroundColor: "#4a148c", 
   },
   logBtn: {
-    backgroundColor: "#e2bee2",
     marginTop: 20,
   },
   txtInput: {
