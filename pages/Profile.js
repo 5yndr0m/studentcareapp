@@ -18,7 +18,9 @@ export default function Profile({ route }) {
           <ProfileCard student={student} />
         </View>
         <View style={styles.footer}>
-          <Text variant="titleMedium" style={styles.footerText}>UoV @ 2024</Text>
+          <Text variant="titleMedium" style={styles.footerText}>
+            UoV {"\u00A9"} 2024
+          </Text>
         </View>
       </View>
     </ScrollView>
@@ -43,11 +45,12 @@ const styles = StyleSheet.create({
   footer: {
     flex: 1,
     backgroundColor: "#e2bee2",
-    justifyContent: "center", 
+    justifyContent: "center",
     alignItems: "center",
   },
   footerText: {
-    color: "#fff", 
+    color: "#fff",
+    fontWeight: "bold",
   },
   scrollView: {
     flexGrow: 1,
