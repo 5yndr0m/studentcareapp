@@ -73,6 +73,12 @@ export default function LoginPage({ navigation }) {
               />
             }
           />
+          <Button 
+            mode="contained" 
+            onPress={handleLogin} 
+            style={styles.logBtn}
+            buttonColor="#4a148c"
+          >
             Login
           </Button>
           {error ? (
