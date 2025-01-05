@@ -125,4 +125,16 @@ const styles = StyleSheet.create({
   txtInput: {
     marginBottom: 10,
   },
+  errorContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#1976d2', 
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 10,
+  },
+  errorText: {
+    color: 'white',
+    marginLeft: 10,
+  },
 });
