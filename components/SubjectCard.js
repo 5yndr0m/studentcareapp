@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
   markValue: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#e2bee2",
+    color: "#4a148c",
     minWidth: 50,
     textAlign: "right",
   },
