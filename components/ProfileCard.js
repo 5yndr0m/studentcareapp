@@ -7,13 +7,12 @@ const ProfileCard = ({ student }) => {
     <Card>
       <Card.Content>
         <View style={styles.container}>
-          <View sttle={styles.overview}>
+          <View style={styles.overview}>
             <Avatar.Image
               size={200}
               source={student?.profile_pic}
               style={styles.avatar}
             />
-
             <Text variant="headlineSmall" style={styles.name}>
               {student?.name}
             </Text>
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
   overview: {
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 20,
+    paddingVertical: 15,
   },
   avatar: {
     marginBottom: 15,
@@ -62,11 +61,13 @@ const styles = StyleSheet.create({
   name: {
     fontWeight: "bold",
     marginBottom: 5,
+    textAlign: "center",
   },
   basicInfo: {
     fontSize: 16,
     color: "#666",
-    marginBottom: 10,
+    marginBottom: 5,
+    textAlign: "center",
   },
   divider: {
     marginVertical: 10,
