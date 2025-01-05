@@ -50,13 +50,18 @@ To install and run this project locally, follow these steps:
 
 ### Screenshots
 
-![Screenshot 1](path/to/screenshot1.png)
-![Screenshot 2](path/to/screenshot2.png)
+![Screenshot 1](./assets/screenshots/Login.jpg)
+![Screenshot 2](./assets/screenshots/Login_error.jpg)
+![Screenshot 3](./assets/screenshots/Login_keyboard.jpg)
+![Screenshot 4](./assets/screenshots/Profile.jpg)
+![Screenshot 5](./assets/screenshots/Profile_2.jpg)
+![Screenshot 6](./assets/screenshots/Subject.jpg)
+![Screenshot 7](./assets/screenshots/Course.jpg)
 
 ### Video
 
 
-[Watch the demo video](path/to/video.mp4)
+[Watch the demo video](./assets/screenshots/video.mp4)
 
 ## Contributing
 
